@@ -1,0 +1,18 @@
+#root,
+html,
+body {
+  height: 100vh; /* makes the application take full height of screen */
+}
+
+body {
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+* {
+  box-sizing: border-box; /* makes styling easier later */
+}
+
+html {
+  scroll-behavior: smooth;
+}

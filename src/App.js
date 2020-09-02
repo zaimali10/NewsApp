@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
+import { Typography } from "@material-ui/core";
 
 import wordsToNumbers from 'words-to-numbers';
 
@@ -47,6 +48,14 @@ const App = () => {
         <img src="https://alan.app/voice/images/previews/preview.jpg" className={classes.alanLogo} alt="logo" />
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
+      {!newsArticles.length ? (
+        <div className={classes.footer}>
+          <Typography variant="body1" component="h2">
+            Created by
+            <a className={classes.link} href="https://www.linkedin.com/in/zaimali10/"> Zaim Ali</a>
+          </Typography>
+        </div>
+      ) : null}
     </div>
   );
 };

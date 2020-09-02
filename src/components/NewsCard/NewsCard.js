@@ -1,11 +1,13 @@
 import React from "react";
 import { Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typography } from '@material-ui/core'
+import classNames from 'classnames';
+
 import useStyles from './styles.js'
 
-const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i }) => {
+const NewsCard = ({ article: { description, publishedAt, source, title, url, urlToImage }, i, activeArticle }) => {
   const classes = useStyles();
   return (
-    <Card className={classes.card}>
+    <Card className={classNames(classes.card, activeArticle === i ? classes.activeCard : null)}>
       <CardActionArea href={url} target="_blank" /*Target = blank makes it so when link is clicked it opens a new page and not on top of our current one */>
         <CardMedia className={classes.media} image={urlToImage || 'https://image.flaticon.com/icons/svg/21/21601.svg'} />
         <div className={classes.details}>
